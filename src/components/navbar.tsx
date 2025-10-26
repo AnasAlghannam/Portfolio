@@ -113,9 +113,9 @@ export const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-between px-6 lg:px-8">
           {/* Left: Logo */}
-          <div className="flex items-center shrink-0">
-            <span className="font-sans-ui">Anas AlGhannam</span>
-          </div>
+          <a href="/" className="flex items-center shrink-0">
+            <span className="font-sans-ui text-xl font-semibold">Anas AlGhannam</span>
+          </a>
 
           {/* Center: Navigation Menu */}
           <div className="flex items-center justify-center flex-1 mx-8">
@@ -128,10 +128,10 @@ export const Navbar = () => {
                   if (item.hasDropdown && item.dropdownItems) {
                     return (
                       <NavigationMenuItem key={`nav-${index}`}>
-                        <NavigationMenuTrigger className="group inline-flex h-12 w-max items-center justify-center rounded-lg bg-transparent px-5 py-3 text-base font-medium transition-colors hover:bg-transparent hover:text-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+                        <NavigationMenuTrigger className="group inline-flex h-12 w-max items-center justify-center rounded-lg bg-transparent px-5 py-3 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
                           {t(item.label as TranslationKeys)}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="left-auto! transition-colors hover:bg-transparent hover:text-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+                        <NavigationMenuContent>
                           <div className="w-[320px] p-3">
                             {item.dropdownItems.map((dropdownItem) => (
                               <NavigationMenuLink asChild key={dropdownItem.key}>
@@ -149,7 +149,7 @@ export const Navbar = () => {
                     <NavigationMenuItem key={`nav-${index}`}>
                       <NavigationMenuLink
                         href={item.href}
-                        className="group inline-flex h-12 w-max items-center justify-center rounded-lg bg-transparent px-5 py-3 text-base font-medium transition-colors hover:bg-transparent hover:text-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+                        className="group inline-flex h-12 w-max items-center justify-center rounded-lg bg-transparent px-5 py-3 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
                       >
                         {t(item.label as TranslationKeys)}
                       </NavigationMenuLink>
@@ -160,7 +160,7 @@ export const Navbar = () => {
             </NavigationMenu>
           </div>
 
-          {/* Right: Search + Controls */}
+          {/* Right: Controls */}
           <div className="flex items-center gap-3 shrink-0">
             <LanguageSwitch />
             <ThemeSwitch />
@@ -171,6 +171,7 @@ export const Navbar = () => {
         <div className="hidden md:flex lg:hidden items-center justify-between px-5">
           {/* Left: Logo */}
           <a href="/" className="flex items-center shrink-0">
+            <span className="font-sans-ui text-lg font-semibold"> {t("learnMore")}</span>
           </a>
 
           {/* Center: Compact Navigation */}
@@ -183,7 +184,7 @@ export const Navbar = () => {
                   if (item.hasDropdown && item.dropdownItems) {
                     return (
                       <NavigationMenuItem key={`nav-md-${index}`}>
-                        <NavigationMenuTrigger className="inline-flex h-10 items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors hover:bg-transparent hover:text-primary">
+                        <NavigationMenuTrigger className="inline-flex h-10 items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground">
                           {t(item.label as TranslationKeys)}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -203,7 +204,7 @@ export const Navbar = () => {
                     <NavigationMenuItem key={`nav-md-${index}`}>
                       <NavigationMenuLink
                         href={item.href}
-                        className="inline-flex h-10 items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors hover:bg-transparent hover:text-primary"
+                        className="inline-flex h-10 items-center justify-center rounded-md bg-transparent px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
                       >
                         {t(item.label as TranslationKeys)}
                       </NavigationMenuLink>
@@ -216,8 +217,6 @@ export const Navbar = () => {
 
           {/* Right: Compact Controls */}
           <div className="flex items-center gap-2 shrink-0">
-            <div className="max-w-[150px]">
-            </div>
             <LanguageSwitch />
             <ThemeSwitch />
           </div>
@@ -225,6 +224,10 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div className="flex md:hidden items-center justify-between px-4 sm:px-5">
+          {/* Left: Logo */}
+          <a href="/" className="flex items-center">
+            <span className="font-sans-ui text-lg font-semibold">Anas AlGhannam</span>
+          </a>
 
           {/* Right side */}
           <div className="flex items-center gap-3">
@@ -238,11 +241,11 @@ export const Navbar = () => {
               <SheetTrigger asChild>
                 <Button variant="outline" size="lg" className="md:hidden h-11 w-11">
                   <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="overflow-y-auto">
-
-                <div className="flex flex-col gap-6 p-5">
+                <div className="flex flex-col gap-6 py-6">
                   {/* Navigation Links */}
                   <Accordion type="single" collapsible className="flex w-full flex-col gap-5">
                     {siteConfig.navItems.map((item, index) => {
@@ -283,7 +286,7 @@ export const Navbar = () => {
                         <a
                           key={`mobile-${index}`}
                           href={item.href}
-                          className="py-3 text-lg font-semibold"
+                          className="py-3 text-lg font-semibold hover:text-primary transition-colors"
                         >
                           {t(item.label as TranslationKeys)}
                         </a>
