@@ -12,6 +12,7 @@ interface DropdownItemConfig {
 interface NavItem {
   label: TranslationKeys
   href: string
+  icon: string
   hasDropdown?: boolean
   dropdownItems?: DropdownItemConfig[]
 }
@@ -46,30 +47,27 @@ export const siteConfig: SiteConfigType = {
     {
       label: "home" as TranslationKeys,
       href: "/",
+      icon: "home",
     },
     {
-      label: "products" as TranslationKeys,
-      href: "/products",
+      label: "projects" as TranslationKeys,
+      href: "#projects",
+      icon: "folder",
     },
     {
-      label: "support" as TranslationKeys,
-      href: "/support",
-    },
-    {
-      label: "about" as TranslationKeys,
-      href: "/about",
-    },
-    {
-      label: "news" as TranslationKeys,
-      href: "/news",
+      label: "experience" as TranslationKeys,
+      href: "#experience",
+      icon: "briefcase",
     },
     {
       label: "blog" as TranslationKeys,
       href: "/blog",
+      icon: "edit",
     },
     {
       label: "contact" as TranslationKeys,
-      href: "/contact",
+      href: "#contact",
+      icon: "mail",
     },
   ],
   navMenuItems: [

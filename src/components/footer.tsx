@@ -1,221 +1,59 @@
-import { useEffect, useRef, useState } from "react"
+import { Github, Linkedin, Mail, Heart } from "lucide-react"
 import { useTranslation } from "@/hooks/useI18n"
-import { siteConfig } from "@/config/site"
-import { InstagramIcon, FacebookIcon, LinkedinIcon, TikTokIcon, YoutubeIcon } from "@/components/icons"
-import { Phone, MapPin, Info } from "lucide-react"
-
-// Logo component
-const FooterLogo = () => {
-  return (
-    <>
-      <img
-        src="/logo_light.png"
-        alt="ROYPOW Logo"
-        className="h-10 w-auto dark:hidden"
-      />
-      <img
-        src="/logo_dark.png"
-        alt="ROYPOW Logo"
-        className="h-10 w-auto hidden dark:block"
-      />
-    </>
-  )
-}
+import { motion } from "framer-motion"
 
 export const Footer = () => {
   const { t } = useTranslation()
-  const [isVisible, setIsVisible] = useState(false)
-  const footerRef = useRef<HTMLElement>(null)
+  const currentYear = new Date().getFullYear()
 
-  // Extract footer sections from siteConfig
-  const footerSections = siteConfig.navItems
-    .filter(item => item.label && item.hasDropdown && item.dropdownItems)
-    .map(item => ({
-      title: t(item.label as string),
-      links: item.dropdownItems?.map(subItem => ({
-        text: t(subItem.label as string),
-        url: subItem.href
-      })) || []
-    }))
-
-  useEffect(() => {
-    const currentFooter = footerRef.current // Capture ref value
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    )
-
-    if (currentFooter) {
-      observer.observe(currentFooter)
-    }
-
-    return () => {
-      if (currentFooter) {
-        observer.unobserve(currentFooter) // Use captured value
-      }
-    }
-  }, [])
+  const socialLinks = [
+    { href: "https://github.com/AnasAlghannam", icon: Github, label: "GitHub" },
+    { href: "https://linkedin.com/in/AnasAlghannam", icon: Linkedin, label: "LinkedIn" },
+    { href: "mailto:anas.alghannam00@gmail.com", icon: Mail, label: "Email" },
+  ]
 
   return (
-    <footer
-      ref={footerRef}
-      className={`border-t border-divider bg-background/60 backdrop-blur-md transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-        }`}
+    <motion.footer
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="border-t border-border/40 bg-background/60 backdrop-blur-md"
     >
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
-          {/* Logo and About */}
-          <div className="lg:col-span-3">
-            <a href="/" className="inline-block mb-4">
-              <FooterLogo />
-            </a>
-
-            <div className="space-y-4">
-              {/* About Section */}
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <Info className="w-4 h-4 text-primary" />
-                  <h3 className="text-sm font-bold text-foreground">{t("aboutUs")}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {t("roypowTechnology")} - {t("aboutUsText1")}
-                </p>
-              </div>
-
-              {/* Phone Number */}
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <h3 className="text-sm font-bold text-foreground">{t("contactUs")}</h3>
-                </div>
-                <a
-                  href="tel:+9647504445598"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  +964 750 444 5598
-                </a>
-              </div>
-
-              {/* Address */}
-              <div>
-                <div className="flex items-center gap-2 mb-2">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <h3 className="text-sm font-bold text-foreground">{t("whereToFindUs")}</h3>
-                </div>
-                <address className="text-sm text-muted-foreground not-italic">
-                  Erbil, Kurdistan Region<br />
-                  Iraq
-                </address>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex gap-4 mt-6">
-              <a
-                href={siteConfig.links.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="w-6 h-6" />
-              </a>
-              <a
-                href={siteConfig.links.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="Facebook"
-              >
-                <FacebookIcon className="w-6 h-6" />
-              </a>
-              <a
-                href={siteConfig.links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon className="w-6 h-6" />
-              </a>
-              <a
-                href={siteConfig.links.Tiktok}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="TikTok"
-              >
-                <TikTokIcon className="w-6 h-6" />
-              </a>
-              <a
-                href={siteConfig.links.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label="YouTube"
-              >
-                <YoutubeIcon className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
-
-          {/* Footer Navigation Sections */}
-          <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-3 gap-8">
-            {footerSections.map((section, index) => (
-              <div key={index}>
-                <h3 className="mb-4 text-sm font-bold text-foreground">
-                  {section.title}
-                </h3>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a
-                        href={link.url}
-                        className="text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
-                      >
-                        {link.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 sm:mt-16 flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-divider pt-8 text-sm">
-          <p className="text-muted-foreground text-center sm:text-left">
-            © 2025 ROYPOW Technology Co., Ltd. {t("allRightsReserved")}
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 py-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          {/* Copyright */}
+          <p className="text-sm text-muted-foreground text-center sm:text-left">
+            © {currentYear} {t("profileName")}. {t("builtWith")}{" "}
+            <Heart className="inline-block h-3.5 w-3.5 text-lime-600" /> {t("using")}.
           </p>
-          <ul className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <li>
-              <a
-                href="/privacy"
-                className="text-muted-foreground hover:text-primary transition-colors underline"
-              >
-                {t("privacy")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="/terms"
-                className="text-muted-foreground hover:text-primary transition-colors underline"
-              >
-                {t("terms")}
-              </a>
-            </li>
-          </ul>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-3">
+            {socialLinks.map((link, index) => {
+              const Icon = link.icon
+              return (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-muted/50 transition-all duration-200 hover:bg-linear-to-r hover:from-lime-500/20 hover:via-gray-500/20 hover:to-lime-500/20"
+                  aria-label={link.label}
+                >
+                  <Icon className="h-4 w-4" />
+                </motion.a>
+              )
+            })}
+          </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
