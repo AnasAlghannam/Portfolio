@@ -1,47 +1,48 @@
 // config/site.ts
-import type { TranslationKeys } from "@/hooks/useI18n"
+import type { TranslationKeys } from "@/hooks/useI18n";
 
 interface DropdownItemConfig {
-  key: string
-  label: TranslationKeys
-  description: TranslationKeys
-  href: string
-  icon: string
+  key: string;
+  label: TranslationKeys;
+  description: TranslationKeys;
+  href: string;
+  icon: string;
 }
 
 interface NavItem {
-  label: TranslationKeys
-  href: string
-  icon: string
-  hasDropdown?: boolean
-  dropdownItems?: DropdownItemConfig[]
+  label: TranslationKeys;
+  href: string;
+  icon: string;
+  hasDropdown?: boolean;
+  dropdownItems?: DropdownItemConfig[];
 }
 
 interface NavMenuItemConfig {
-  label: TranslationKeys
-  href: string
+  label: TranslationKeys;
+  href: string;
 }
 
 interface Links {
-  linkedin: string
-  facebook: string
-  instagram: string
+  linkedin: string;
+  facebook: string;
+  instagram: string;
 }
 
 interface SiteConfigType {
-  name: string
-  description: string
-  icon: string
-  navItems: NavItem[]
-  navMenuItems: NavMenuItemConfig[]
-  links: Links
+  name: string;
+  description: string;
+  icon: string;
+  navItems: NavItem[];
+  navMenuItems: NavMenuItemConfig[];
+  links: Links;
 }
 
-export type SiteConfig = typeof siteConfig
+export type SiteConfig = typeof siteConfig;
 
 export const siteConfig: SiteConfigType = {
   name: "Anas AlGhannam - Front-End Developer Portfolio",
-  description: "Portfolio of Anas AlGhannam, a Front-End Web Developer specializing in modern web technologies.",
+  description:
+    "Portfolio of Anas AlGhannam, a Front-End Web Developer specializing in modern web technologies.",
   icon: "/favicon.ico",
   navItems: [
     {
@@ -105,4 +106,4 @@ export const siteConfig: SiteConfigType = {
     instagram: "https://www.instagram.com/roypow/",
     facebook: "https://www.facebook.com/roypowiraq/",
   },
-}
+};

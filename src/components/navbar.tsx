@@ -1,10 +1,9 @@
 import { Home, Folder, Briefcase, Edit, Mail } from "lucide-react"
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip"
 import { ThemeSwitch } from "@/components/theme-switch"
-import { LanguageSwitch } from "@/components/language-switch"
 import { useTranslation} from "@/hooks/useI18n"
 import { siteConfig } from "@/config/site"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
 // Icons mapping
@@ -19,8 +18,6 @@ const iconMap = {
 export const Navbar = () => {
   const { t } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
-  const { scrollY } = useScroll()
-  const shadowOpacity = useTransform(scrollY, [0, 100], [0, 1])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,14 +28,13 @@ export const Navbar = () => {
   }, [])
 
   return (
-    <>
-      <motion.nav
+    <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-fit mx-auto">
           <motion.div
             animate={{ y: scrolled ? -2 : 0 }}
             transition={{ duration: 0.3 }}
@@ -82,21 +78,11 @@ export const Navbar = () => {
 
             {/* Right: Controls */}
             <div className="flex items-center gap-1">
-              <LanguageSwitch />
               <ThemeSwitch />
             </div>
           </div>
         </motion.div>
       </div>
     </motion.nav>
-
-    {/* Gradient shadow under navbar */}
-    <motion.div
-      className="fixed top-20 left-0 right-0 h-20 pointer-events-none z-40"
-      style={{ opacity: shadowOpacity }}
-    >
-      <div className="absolute inset-0 bg-linear-to-b from-lime-500/5 via-transparent to-transparent" />
-    </motion.div>
-    </>
   )
 }
