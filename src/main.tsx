@@ -8,7 +8,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/Portfolio/">
+    <BrowserRouter basename="import.meta.env.BASE_URL">
       <ThemeProvider defaultTheme="light" storageKey="ui-theme">
         <App />
       </ThemeProvider>
