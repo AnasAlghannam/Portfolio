@@ -13,7 +13,7 @@ const projects: Project[] = [
   {
     titleKey: "proj1Title",
     descriptionKey: "proj1Desc",
-    technologies: ["React", "TypeScript", "Next.js", "Shadcn UI"],
+    technologies: ["React", "TypeScript", "Vite", "Shadcn UI"],
     link: "https://roypow.com",
   },
   {

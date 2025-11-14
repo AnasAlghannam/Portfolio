@@ -1,6 +1,6 @@
 "use client";
 export default function ToolsSection() {
-  const tools = ["Next.js", "n8n", "Tailwind", "TypeScript", "Shadcn/UI", "OpenAI"];
+  const tools = ["Vite", "n8n", "Tailwind", "TypeScript", "Shadcn/UI", "OpenAI"];
 
   return (
     <section className="py-12 bg-white dark:bg-gray-950">

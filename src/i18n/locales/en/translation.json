@@ -255,7 +255,7 @@
   "exp4Desc1": "Designed and implemented microcontroller-based IoT systems using Arduino, ESP32, and Raspberry Pi.",
   "exp4Desc2": "Integrated sensors, actuators, and wireless communication protocols (Wi-Fi, Bluetooth, MQTT) for real-time automation and monitoring.",
   "proj1Title": "Frontend Development for Roypow Company",
-  "proj1Desc": "Developed and maintained responsive corporate web applications using React.js, Next.js, and TypeScript. Implemented reusable UI components, modern UX patterns, and performance optimization.",
+  "proj1Desc": "Developed and maintained responsive corporate web applications using React.js, Vite, and TypeScript. Implemented reusable UI components, modern UX patterns, and performance optimization.",
   "proj2Title": "Full-Stack Web Application",
   "proj2Desc": "Developed responsive full-stack web applications with user authentication, verification, and database integration. Applied RESTful API design, MVC architecture, and modern front-end practices.",
   "proj3Title": "Inverted Pendulum Control",

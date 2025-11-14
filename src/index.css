@@ -2,6 +2,23 @@
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
+/* Custom Font Faces */
+@font-face {
+  font-family: 'YourFont';
+  src: url('/fonts/YourFont-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YourFont';
+  src: url('/fonts/YourFont-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -38,6 +55,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Font Family */
+  --font-family-sans: 'YourFont', 'Poppins', sans-serif;
 }
 
 :root {
