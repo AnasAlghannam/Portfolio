@@ -39,7 +39,7 @@ export const ProfileCard = () => {
             >
               <img
                 src="/profilepic.jpeg"
-                alt="Anas AlGhannam"
+                alt="Anas Alghannam"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   // Fallback to a placeholder if image doesn't exist
