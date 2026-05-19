@@ -198,11 +198,17 @@ function LiveDemo() {
     setLoading(true);
     setA("");
     try {
-      const text = await window.claude.complete({
-        messages: [
-          { role: "user", content: `${buildSystemPrompt()}\n\n## Question\n${question}` }
-        ]
+      const res = await fetch("https://portfolio-ai-proxy.anas-alghannam00.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [
+            { role: "user", content: `${buildSystemPrompt()}\n\n## Question\n${question}` }
+          ]
+        })
       });
+      if (!res.ok) throw new Error(await res.text());
+      const { text } = await res.json();
       // Simulated typing
       let i = 0;
       const out = String(text || "").trim();
