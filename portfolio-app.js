@@ -22,10 +22,7 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav-inner">
-        <a className="nav-mark" href="#top">
-          <span className="nav-mark-dot" />
-          <span>ANAS · ALGHANNAM</span>
-        </a>
+
         <div className="nav-links">
           <a href="#ask">Ask</a>
           <a href="#work">Work</a>
