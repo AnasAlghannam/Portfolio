@@ -12,7 +12,7 @@ window.PORTFOLIO_DATA = {
     accent: "production-grade",
     post: "AI systems — from reinforcement-learning agents and computer-vision pipelines to multilingual web platforms that ship."
   },
-  summary: "Computer engineer translating dense ML research into systems people actually use. Currently researching applications of AI/ML in Health Professions Education at Qatar University, building real-time Claude/Gemini-powered tools for clinical training simulations.",
+  summary: "Computer engineer translating dense ML research into systems people actually use. Currently researching applications of AI/ML in Health Professions Education at Qatar University, building real-time GenAI-powered tools for clinical training simulations.",
   metrics: [
     { value: "92%", label: "Decision-accuracy in SAC-based RL simulations" },
     { value: "45%", label: "Bundle-size reduction on shipped corporate platform" },
