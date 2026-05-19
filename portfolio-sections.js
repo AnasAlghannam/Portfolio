@@ -147,7 +147,7 @@ function Metrics() {
 const SUGGESTED_PROMPTS = [
   "What kinds of AI projects has Anas built?",
   "Summarise his reinforcement-learning research.",
-  "Is he a good fit for an AI research role?",
+  "Is he a good fit for an AI Engineering role?",
   "What's his strongest technical stack?"
 ];
 
@@ -228,7 +228,7 @@ function LiveDemo() {
             <h2 className="section-title">Ask <span className="it">anything.</span></h2>
           </div>
           <div className="section-lede">
-            Powered by Claude — embedded right here in the page. Ask about Anas's research, projects, or stack and get an answer
+            AI-powered, embedded right here in the page. Ask about Anas's research, projects, or stack and get an answer
             grounded in his actual work. The model only knows what's on this page.
           </div>
         </div>
