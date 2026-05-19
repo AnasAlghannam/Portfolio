@@ -426,17 +426,37 @@ function Skills() {
 
         <Reveal delay={120}>
           <div className="certs">
-            <div className="label" style={{ marginBottom: "28px" }}>
-              <span style={{ color: "var(--accent)", marginRight: 8 }}>+</span>
-              Certifications · {PORTFOLIO_DATA.certifications.reduce((n, g) => n + g.badges.length, 0)}
+            <div className="label" style={{ marginBottom: "24px" }}>
+              <span style={{ color: "var(--accent)", marginRight: 8 }}>+</span>Certificates · {PORTFOLIO_DATA.certificates.length}
             </div>
-            {PORTFOLIO_DATA.certifications.map((group) => (
+            <div className="cert-cards-grid">
+              {PORTFOLIO_DATA.certificates.map((c) => (
+                <div key={c.title} className="cert-card">
+                  <img src={c.logo} alt={c.issuer} className="cert-card-logo" />
+                  <div className="cert-card-body">
+                    <span className="cert-card-title">{c.title}</span>
+                    <span className="cert-card-issuer">{c.issuer}</span>
+                    <span className="cert-card-date">{c.date}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={180}>
+          <div className="certs" style={{ marginTop: "48px" }}>
+            <div className="label" style={{ marginBottom: "24px" }}>
+              <span style={{ color: "var(--accent)", marginRight: 8 }}>+</span>
+              Badges · {PORTFOLIO_DATA.badges.reduce((n, g) => n + g.items.length, 0)}
+            </div>
+            {PORTFOLIO_DATA.badges.map((group) => (
               <div key={group.issuer} className="cert-group">
                 <div className="cert-group-header">
                   <img src={group.logo} alt={group.issuer} className="cert-issuer-logo" />
                 </div>
                 <div className="cert-badges-grid">
-                  {group.badges.map((b) => (
+                  {group.items.map((b) => (
                     <div key={b.title} className="cert-badge-card">
                       <img src={b.img} alt={b.title} className="cert-badge-img" />
                       <div className="cert-badge-info">

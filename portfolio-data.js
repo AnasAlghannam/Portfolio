@@ -150,12 +150,17 @@ window.PORTFOLIO_DATA = {
     "IoT / Embedded": ["Arduino", "ESP32", "Raspberry Pi", "MQTT", "Firmware"],
     "Research": ["Literature Review", "Experimental Design", "Statistical Analysis", "Academic Writing", "Research Ethics"]
   },
-  certifications: [
+  certificates: [
+    { title: "IBM AI Engineering Professional Certificate", issuer: "IBM · Coursera", date: "May 2026", img: "https://images.credly.com/images/fa4ad241-cbb4-4330-9327-32b9696919fe/Coursera_20AI_20Engineering_20Professional_20Certificate.png", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
+    { title: "Google AI Professional Certificate", issuer: "Google · Coursera", date: "Apr 2026", img: "https://images.credly.com/images/5bd2d506-c95c-4766-a5b1-8da62a3a23b2/blob", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
+    { title: "Huawei HCIA-AI V4.0", issuer: "Huawei", date: "Apr 2026", img: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg" },
+    { title: "CITI Program — SBE Comprehensive", issuer: "CITI Program", date: "2026", img: "https://about.citiprogram.org/wp-content/uploads/2019/06/CITI-logo.png", logo: "https://about.citiprogram.org/wp-content/uploads/2019/06/CITI-logo.png" }
+  ],
+  badges: [
     {
       issuer: "IBM",
       logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-      badges: [
-        { title: "IBM AI Engineering Professional Certificate (V3)", date: "May 2026", img: "https://images.credly.com/images/fa4ad241-cbb4-4330-9327-32b9696919fe/Coursera_20AI_20Engineering_20Professional_20Certificate.png" },
+      items: [
         { title: "Advanced Deep Learning Specialist", date: "Apr 2026", img: "https://images.credly.com/images/3e91c6f6-1d05-4b40-9005-4344e35edaff/Coursera_20Advanced_20Deep_20Learning_20Specialist.png" },
         { title: "Generative AI Applications Specialist", date: "May 2026", img: "https://images.credly.com/images/cdb44549-e7b6-47e7-a21f-160cecf8f38f/Coursera_20Generative_20AI_20Applications_20Specialist.png" },
         { title: "AI Agents Using RAG and LangChain", date: "Apr 2026", img: "https://images.credly.com/images/bc1ee755-d8b5-4068-91fa-60a6e05f12dc/Coursera_20AI_20Agents_20Using_20RAG_20and_20LangChain.png" },
@@ -179,8 +184,7 @@ window.PORTFOLIO_DATA = {
     {
       issuer: "Google",
       logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-      badges: [
-        { title: "Google AI Professional Certificate", date: "Apr 2026", img: "https://images.credly.com/images/5bd2d506-c95c-4766-a5b1-8da62a3a23b2/blob" },
+      items: [
         { title: "Google AI Fundamentals", date: "Apr 2026", img: "https://images.credly.com/images/ee3ee65e-f3a4-4dcf-8cf4-e5a19ba89fe5/blob" },
         { title: "Google AI for App Building", date: "Apr 2026", img: "https://images.credly.com/images/7e854d65-d59d-45ad-9d4d-89d627087c08/blob" },
         { title: "Google AI for Brainstorming and Planning", date: "Apr 2026", img: "https://images.credly.com/images/0b476bd4-bb81-4eaf-9464-8c54451fa7ee/blob" },
