@@ -426,17 +426,28 @@ function Skills() {
 
         <Reveal delay={120}>
           <div className="certs">
-            <div className="label" style={{ marginBottom: "20px" }}>
-              <span style={{ color: "var(--accent)", marginRight: 8 }}>+</span>Certifications · {PORTFOLIO_DATA.certifications.length}
+            <div className="label" style={{ marginBottom: "28px" }}>
+              <span style={{ color: "var(--accent)", marginRight: 8 }}>+</span>
+              Certifications · {PORTFOLIO_DATA.certifications.reduce((n, g) => n + g.badges.length, 0)}
             </div>
-            <ul className="certs-list">
-              {PORTFOLIO_DATA.certifications.map((c, i) => (
-                <li className="cert" key={i}>
-                  <span className="cert-title">{c.title}</span>
-                  <span className="cert-note">{c.note}</span>
-                </li>
-              ))}
-            </ul>
+            {PORTFOLIO_DATA.certifications.map((group) => (
+              <div key={group.issuer} className="cert-group">
+                <div className="cert-group-header">
+                  <img src={group.logo} alt={group.issuer} className="cert-issuer-logo" />
+                </div>
+                <div className="cert-badges-grid">
+                  {group.badges.map((b) => (
+                    <div key={b.title} className="cert-badge-card">
+                      <img src={b.img} alt={b.title} className="cert-badge-img" />
+                      <div className="cert-badge-info">
+                        <span className="cert-badge-title">{b.title}</span>
+                        <span className="cert-badge-date">{b.date}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </Reveal>
       </div>

@@ -144,21 +144,52 @@ window.PORTFOLIO_DATA = {
     gpa: "3.0"
   },
   skills: {
-    "AI / ML": ["TensorFlow", "Keras", "PyTorch", "Scikit-learn", "Hugging Face", "OpenAI Gym", "BLIP", "Whisper ASR", "Pandas"],
+    "AI / ML": ["TensorFlow", "Keras", "PyTorch", "Scikit-learn", "Hugging Face", "LangChain", "RAG", "LLMs", "Transformers", "Fine-tuning", "OpenAI Gym", "BLIP", "Whisper ASR", "Pandas"],
     "Languages": ["Python", "TypeScript", "JavaScript", "Java", "C / C++", "PHP", "Bash"],
     "Web / Product": ["React", "Electron", "Vite", "Tailwind", "react-i18next", "Socket.IO"],
     "IoT / Embedded": ["Arduino", "ESP32", "Raspberry Pi", "MQTT", "Firmware"],
     "Research": ["Literature Review", "Experimental Design", "Statistical Analysis", "Academic Writing", "Research Ethics"]
   },
   certifications: [
-    { title: "IBM AI Engineering Professional", note: "TensorFlow · Keras · PyTorch · CV · NLP · DL" },
-    { title: "Google AI Professional Certificate", note: "7-track program — Apr 2026" },
-    { title: "Huawei HCIA-AI V4.0", note: "AI · ML · DL frameworks — Apr 2026" },
-    { title: "IBM Deep Learning with Keras & TensorFlow", note: "Model optimisation · TF pipelines — Apr 2026" },
-    { title: "IBM Machine Learning with Python", note: "Supervised / unsupervised / clustering — Apr 2026" },
-    { title: "IBM Neural Networks & PyTorch", note: "Network construction + training — Apr 2026" },
-    { title: "IBM Deep Learning & Neural Networks with Keras", note: "Fundamentals · architecture — Apr 2026" },
-    { title: "CITI Program — SBE Comprehensive", note: "Social & Behavioral Research Ethics — 2026" }
+    {
+      issuer: "IBM",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+      badges: [
+        { title: "IBM AI Engineering Professional Certificate (V3)", date: "May 2026", img: "https://images.credly.com/images/fa4ad241-cbb4-4330-9327-32b9696919fe/Coursera_20AI_20Engineering_20Professional_20Certificate.png" },
+        { title: "Advanced Deep Learning Specialist", date: "Apr 2026", img: "https://images.credly.com/images/3e91c6f6-1d05-4b40-9005-4344e35edaff/Coursera_20Advanced_20Deep_20Learning_20Specialist.png" },
+        { title: "Generative AI Applications Specialist", date: "May 2026", img: "https://images.credly.com/images/cdb44549-e7b6-47e7-a21f-160cecf8f38f/Coursera_20Generative_20AI_20Applications_20Specialist.png" },
+        { title: "AI Agents Using RAG and LangChain", date: "Apr 2026", img: "https://images.credly.com/images/bc1ee755-d8b5-4068-91fa-60a6e05f12dc/Coursera_20AI_20Agents_20Using_20RAG_20and_20LangChain.png" },
+        { title: "Generative AI Advanced Fine-Tuning for LLMs", date: "Apr 2026", img: "https://images.credly.com/images/e61e6ff9-3502-4d64-b726-64f932ffbf02/Coursera_20Generative_20AI_20Advanced_20Fine_20Tuning_20for_20LLMs.png" },
+        { title: "Generative AI Engineering with Transformers & LLMs", date: "Apr 2026", img: "https://images.credly.com/images/6387f397-234b-480c-a0a0-4f9d6f8654a8/blob" },
+        { title: "Generative AI Language Modeling with Transformers", date: "Apr 2026", img: "https://images.credly.com/images/bc7582ae-95c6-4e92-a425-d355c65b7d10/image.png" },
+        { title: "Generative AI Foundational Models for NLP & Language Understanding", date: "Apr 2026", img: "https://images.credly.com/images/954a697e-66c0-45c3-8681-ced968dfa73e/blob" },
+        { title: "Generative AI and LLMs: Architecture and Data Preparation", date: "Apr 2026", img: "https://images.credly.com/images/a9f5d0ac-5ee8-47a6-a9df-09468f26e401/image.png" },
+        { title: "Build RAG Applications: Get Started", date: "May 2026", img: "https://images.credly.com/images/5f826bbb-5028-4ed0-aa9b-f5d402f96a0b/Coursera_20Build_20RAG_20Applications_20Get_20Started.png" },
+        { title: "Develop Generative AI Applications: Get Started", date: "May 2026", img: "https://images.credly.com/images/6dff9a88-0130-483b-861e-c6de13851780/Coursera_20Develop_20Gen_20AI_20Applications_20Get_20Started.png" },
+        { title: "Generative AI: Prompt Engineering", date: "May 2026", img: "https://images.credly.com/images/7fd5a03e-823f-4449-af43-59afe528f4ee/image.png" },
+        { title: "Generative AI Essentials", date: "May 2026", img: "https://images.credly.com/images/7658c4f1-0570-42c7-83b0-04cac8b0aca2/image.png" },
+        { title: "Artificial Intelligence Essentials V2", date: "May 2026", img: "https://images.credly.com/images/3e199561-bc4a-4621-9361-340fc43d997e/Coursera_20Artificial_20Intelligence_20Essentials_20V2.png" },
+        { title: "AI Capstone Project with Deep Learning", date: "Apr 2026", img: "https://images.credly.com/images/a182504c-d74d-4d7c-8059-7401184fadf7/AI_Engineering_Deep_Learning_Capstone.png" },
+        { title: "Deep Learning with PyTorch", date: "Apr 2026", img: "https://images.credly.com/images/b480dfb3-5387-491d-a8db-0e01ad620b51/Coursera_20Deep_20Learning_20with_20PyTorch.png" },
+        { title: "Introduction to Neural Networks with PyTorch", date: "Apr 2026", img: "https://images.credly.com/images/335a694d-1fc4-4c83-a467-f140862a0a1e/Coursera_20Introduction_20to_20Neural_20Networks_20with_20PyTorch.png" },
+        { title: "Deep Learning Essentials with Keras", date: "Apr 2026", img: "https://images.credly.com/images/91de936a-1322-446d-9ea6-949d78c57428/image.png" },
+        { title: "Machine Learning with Python (V2)", date: "Apr 2026", img: "https://images.credly.com/images/56c60565-e945-4bcd-b8a6-9b2f43e1b0d9/Coursera_20Machine_20Learning_20with_20Python_20V2.png" }
+      ]
+    },
+    {
+      issuer: "Google",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+      badges: [
+        { title: "Google AI Professional Certificate", date: "Apr 2026", img: "https://images.credly.com/images/5bd2d506-c95c-4766-a5b1-8da62a3a23b2/blob" },
+        { title: "Google AI Fundamentals", date: "Apr 2026", img: "https://images.credly.com/images/ee3ee65e-f3a4-4dcf-8cf4-e5a19ba89fe5/blob" },
+        { title: "Google AI for App Building", date: "Apr 2026", img: "https://images.credly.com/images/7e854d65-d59d-45ad-9d4d-89d627087c08/blob" },
+        { title: "Google AI for Brainstorming and Planning", date: "Apr 2026", img: "https://images.credly.com/images/0b476bd4-bb81-4eaf-9464-8c54451fa7ee/blob" },
+        { title: "Google AI for Content Creation", date: "Apr 2026", img: "https://images.credly.com/images/6ffa4f1e-cf24-4d4b-af84-86105720f6fe/blob" },
+        { title: "Google AI for Data Analysis", date: "Apr 2026", img: "https://images.credly.com/images/34ac978e-748e-4e7e-9227-34e0746716c8/blob" },
+        { title: "Google AI for Research and Insights", date: "Apr 2026", img: "https://images.credly.com/images/3460226a-69cf-47d2-91cf-7ce24fe0da59/blob" },
+        { title: "Google AI for Writing and Communicating", date: "Apr 2026", img: "https://images.credly.com/images/3d5a1839-d1dc-4821-b58e-3a274b610f37/blob" }
+      ]
+    }
   ],
   contact: {
     email: "anas.alghannam00@gmail.com",
