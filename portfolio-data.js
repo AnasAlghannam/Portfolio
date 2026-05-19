@@ -4,7 +4,7 @@ window.PORTFOLIO_DATA = {
   roles: ["AI/ML Engineer", "Research Assistant", "Front-End Developer"],
   location: "Doha, Qatar",
   status: {
-    label: "Available for research collaboration",
+    label: "AI/ML Research · Qatar University",
     detail: "Qatar University · Jan 2026 – Present"
   },
   tagline: {
