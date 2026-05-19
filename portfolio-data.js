@@ -153,8 +153,8 @@ window.PORTFOLIO_DATA = {
   certificates: [
     { title: "IBM AI Engineering Professional Certificate", issuer: "IBM · Coursera", date: "May 2026", img: "https://images.credly.com/images/fa4ad241-cbb4-4330-9327-32b9696919fe/Coursera_20AI_20Engineering_20Professional_20Certificate.png", logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" },
     { title: "Google AI Professional Certificate", issuer: "Google · Coursera", date: "Apr 2026", img: "https://images.credly.com/images/5bd2d506-c95c-4766-a5b1-8da62a3a23b2/blob", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" },
-    { title: "Huawei HCIA-AI V4.0", issuer: "Huawei", date: "Apr 2026", img: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg" },
-    { title: "CITI Program — SBE Comprehensive", issuer: "CITI Program", date: "2026", img: "https://about.citiprogram.org/wp-content/uploads/2019/06/CITI-logo.png", logo: "https://about.citiprogram.org/wp-content/uploads/2019/06/CITI-logo.png" }
+    { title: "Huawei HCIA-AI V4.0", issuer: "Huawei", date: "Apr 2026", logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 48'%3E%3Crect width='120' height='48' rx='6' fill='%23CF0A2C'/%3E%3Ctext x='60' y='32' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3EHuawei%3C/text%3E%3C/svg%3E" },
+    { title: "CITI Program — SBE Comprehensive", issuer: "CITI Program", date: "2026", logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 48'%3E%3Crect width='120' height='48' rx='6' fill='%23003366'/%3E%3Ctext x='60' y='32' font-family='Arial,sans-serif' font-size='18' font-weight='bold' fill='white' text-anchor='middle'%3ECITI%3C/text%3E%3C/svg%3E" }
   ],
   badges: [
     {

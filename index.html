@@ -728,10 +728,11 @@
   }
   .cert-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .cert-card-logo {
-    width: 48px; height: 48px;
+    width: 64px; height: 36px;
     object-fit: contain; flex-shrink: 0;
     filter: grayscale(1) brightness(1.4);
     transition: filter 0.2s;
+    border-radius: 4px;
   }
   [data-theme="light"] .cert-card-logo { filter: grayscale(1) brightness(0.3); }
   .cert-card:hover .cert-card-logo { filter: none; }
