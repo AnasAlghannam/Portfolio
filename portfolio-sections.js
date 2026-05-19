@@ -64,12 +64,6 @@ function Hero() {
     <section className="hero" id="top" data-screen-label="Hero">
       <div className="hero-grid">
         <Reveal>
-          <div className="status-row">
-            <span className="pulse" />
-            <span>{d.status.label}</span>
-            <span style={{ color: "var(--text-dim)" }}>· {d.status.detail}</span>
-          </div>
-
           <div className="hero-meta" style={{ marginTop: "20px", marginBottom: "0" }}>
             <div className="hero-meta-item">
               <div className="label">Based</div>
@@ -590,7 +584,6 @@ function Footer() {
         </Reveal>
 
         <div className="footer-bottom">
-          {linkBar}
           <span>© {new Date().getFullYear()} Anas AlGhannam</span>
         </div>
       </div>
