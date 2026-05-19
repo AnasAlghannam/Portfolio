@@ -237,7 +237,7 @@ function LiveDemo() {
           <div className="demo">
             <div className="demo-head">
               <h3>An <span className="it">AI portfolio</span> deserves a real AI inside it.</h3>
-              <div className="demo-badge">Gemini · Flash</div>
+              <div className="demo-badge">Llama 3.1 · Groq</div>
             </div>
 
             <div className="demo-prompts">
