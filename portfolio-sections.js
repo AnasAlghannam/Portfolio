@@ -62,7 +62,6 @@ function Hero() {
 
   return (
     <section className="hero" id="top" data-screen-label="Hero">
-      <div className="hero-mark" aria-hidden="true">A·A</div>
       <div className="hero-grid">
         <Reveal>
           <div className="status-row">
@@ -88,11 +87,6 @@ function Hero() {
             <span className="hero-name-meta-tick" />
             <span className="hero-name-meta-name" key={fontIdx}>
               Set in {NAME_FONTS[fontIdx].label}
-            </span>
-            <span className="hero-name-meta-dots">
-              {NAME_FONTS.map((_, i) => (
-                <span key={i} className={`hero-name-meta-dot ${i === fontIdx ? "is-active" : ""}`} />
-              ))}
             </span>
           </div>
           <div className="hero-roles">
@@ -243,7 +237,7 @@ function LiveDemo() {
           <div className="demo">
             <div className="demo-head">
               <h3>An <span className="it">AI portfolio</span> deserves a real AI inside it.</h3>
-              <div className="demo-badge">Claude · Haiku 4.5</div>
+              <div className="demo-badge">Gemini · Flash</div>
             </div>
 
             <div className="demo-prompts">
