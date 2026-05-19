@@ -83,12 +83,7 @@ function Hero() {
               ))}
             </span>
           </h1>
-          <div className="hero-name-meta" aria-hidden="true">
-            <span className="hero-name-meta-tick" />
-            <span className="hero-name-meta-name" key={fontIdx}>
-              Set in {NAME_FONTS[fontIdx].label}
-            </span>
-          </div>
+
           <div className="hero-roles">
             {d.roles.map((r) => <span key={r}>{r}</span>)}
           </div>
@@ -520,7 +515,6 @@ function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Anas AlGhannam</span>
-          <span>Built with React · Hosted with care</span>
         </div>
       </div>
     </footer>
