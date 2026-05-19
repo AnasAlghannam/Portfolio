@@ -485,7 +485,11 @@ function Footer() {
             </div>
             <div className="footer-col">
               <div className="label">LinkedIn</div>
-              <a href="#" onClick={(e) => e.preventDefault()}>{c.linkedin} ↗</a>
+              <a href={c.linkedinUrl} target="_blank" rel="noreferrer">{c.linkedin} ↗</a>
+            </div>
+            <div className="footer-col">
+              <div className="label">Credly</div>
+              <a href={c.credlyUrl} target="_blank" rel="noreferrer">{c.credly} ↗</a>
             </div>
             <div className="footer-col">
               <div className="label">Based in</div>

@@ -197,6 +197,9 @@ window.PORTFOLIO_DATA = {
     github: "AnasAlghannam",
     githubUrl: "https://github.com/AnasAlghannam",
     linkedin: "Anas AlGhannam",
+    linkedinUrl: "https://www.linkedin.com/in/anasalghannam/",
+    credly: "Credly Profile",
+    credlyUrl: "https://www.credly.com/users/anas-alghannam/",
     location: "Doha, Qatar"
   }
 };
