@@ -69,6 +69,26 @@ function Hero() {
             <span>{d.status.label}</span>
             <span style={{ color: "var(--text-dim)" }}>· {d.status.detail}</span>
           </div>
+
+          <div className="hero-meta" style={{ marginTop: "20px", marginBottom: "0" }}>
+            <div className="hero-meta-item">
+              <div className="label">Based</div>
+              <div className="val">{d.location}</div>
+            </div>
+            <div className="hero-meta-item">
+              <div className="label">Local time</div>
+              <div className="val mono">{time}</div>
+            </div>
+            <div className="hero-meta-item">
+              <div className="label">Education</div>
+              <div className="val">{d.education.degree} · {d.education.school}</div>
+            </div>
+            <div className="hero-meta-item">
+              <div className="label">Latest</div>
+              <div className="val">Research Assistant — Qatar University</div>
+            </div>
+          </div>
+
           <h1 className="hero-name" data-comment-anchor="hero-name" aria-label="Anas AlGhannam">
             <span className="hero-name-stack">
               <span className="hero-name-ghost" aria-hidden="true">Anas AlGhannam</span>
@@ -93,25 +113,6 @@ function Hero() {
           <p className="hero-tagline">
             {d.tagline.pre} <span className="accent">{d.tagline.accent}</span> {d.tagline.post}
           </p>
-        </Reveal>
-
-        <Reveal delay={240} className="hero-meta">
-          <div className="hero-meta-item">
-            <div className="label">Based</div>
-            <div className="val">{d.location}</div>
-          </div>
-          <div className="hero-meta-item">
-            <div className="label">Local time</div>
-            <div className="val mono">{time}</div>
-          </div>
-          <div className="hero-meta-item">
-            <div className="label">Education</div>
-            <div className="val">{d.education.degree} · {d.education.school}</div>
-          </div>
-          <div className="hero-meta-item">
-            <div className="label">Latest</div>
-            <div className="val">Research Assistant — Qatar University</div>
-          </div>
         </Reveal>
       </div>
     </section>
@@ -505,48 +506,34 @@ function Footer() {
     }
   }
 
+  const linkBar = (
+    <div className="footer-link-bar">
+      <a href={`mailto:${c.email}`}>{c.email}</a>
+      <span className="footer-link-sep">·</span>
+      <a href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>
+      <span className="footer-link-sep">·</span>
+      <a href={c.githubUrl} target="_blank" rel="noreferrer">GitHub ↗</a>
+      <span className="footer-link-sep">·</span>
+      <a href={c.linkedinUrl} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      <span className="footer-link-sep">·</span>
+      <a href={c.credlyUrl} target="_blank" rel="noreferrer">Credly ↗</a>
+      <span className="footer-link-sep">·</span>
+      <span>{c.location}</span>
+    </div>
+  );
+
   return (
     <footer className="footer" id="contact" data-screen-label="Contact">
       <div className="footer-inner">
-        <Reveal>
-          <h2 className="footer-title">
-            Let's build something <span className="it">intelligent.</span>
-          </h2>
-        </Reveal>
+        <Reveal>{linkBar}</Reveal>
 
-        <Reveal delay={120}>
-          <div className="footer-body">
-            <div className="footer-links">
-              <div className="footer-col">
-                <div className="label">Email</div>
-                <a href={`mailto:${c.email}`}>{c.email}</a>
-              </div>
-              <div className="footer-col">
-                <div className="label">Phone</div>
-                <a href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>
-              </div>
-              <div className="footer-col">
-                <div className="label">GitHub</div>
-                <a href={c.githubUrl} target="_blank" rel="noreferrer">@{c.github} ↗</a>
-              </div>
-              <div className="footer-col">
-                <div className="label">LinkedIn</div>
-                <a href={c.linkedinUrl} target="_blank" rel="noreferrer">{c.linkedin} ↗</a>
-              </div>
-              <div className="footer-col">
-                <div className="label">Credly</div>
-                <a href={c.credlyUrl} target="_blank" rel="noreferrer">{c.credly} ↗</a>
-              </div>
-              <div className="footer-col">
-                <div className="label">Based in</div>
-                <span>{c.location}</span>
-              </div>
-            </div>
+        <Reveal delay={80}>
+          <div className="footer-top-body">
+            <h2 className="footer-title">
+              Let's build something <span className="it">intelligent.</span>
+            </h2>
 
             <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="label" style={{ marginBottom: "20px" }}>
-                <span style={{ color: "var(--accent)", marginRight: 8 }}>→</span>Send a message
-              </div>
               <div className="contact-row">
                 <div className="contact-field">
                   <label className="contact-label">Name</label>
@@ -603,6 +590,7 @@ function Footer() {
         </Reveal>
 
         <div className="footer-bottom">
+          {linkBar}
           <span>© {new Date().getFullYear()} Anas AlGhannam</span>
         </div>
       </div>
