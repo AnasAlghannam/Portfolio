@@ -475,6 +475,36 @@ function Skills() {
 // ────────────────────────────────────────────────────────────────────────────
 function Footer() {
   const c = PORTFOLIO_DATA.contact;
+  const [form, setForm] = React.useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = React.useState("idle"); // idle | sending | sent | error
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "50db71c7-5f69-4447-913d-cb6c55b8305a",
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("sent");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <footer className="footer" id="contact" data-screen-label="Contact">
       <div className="footer-inner">
@@ -485,31 +515,90 @@ function Footer() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="footer-links">
-            <div className="footer-col">
-              <div className="label">Email</div>
-              <a href={`mailto:${c.email}`}>{c.email}</a>
+          <div className="footer-body">
+            <div className="footer-links">
+              <div className="footer-col">
+                <div className="label">Email</div>
+                <a href={`mailto:${c.email}`}>{c.email}</a>
+              </div>
+              <div className="footer-col">
+                <div className="label">Phone</div>
+                <a href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>
+              </div>
+              <div className="footer-col">
+                <div className="label">GitHub</div>
+                <a href={c.githubUrl} target="_blank" rel="noreferrer">@{c.github} ↗</a>
+              </div>
+              <div className="footer-col">
+                <div className="label">LinkedIn</div>
+                <a href={c.linkedinUrl} target="_blank" rel="noreferrer">{c.linkedin} ↗</a>
+              </div>
+              <div className="footer-col">
+                <div className="label">Credly</div>
+                <a href={c.credlyUrl} target="_blank" rel="noreferrer">{c.credly} ↗</a>
+              </div>
+              <div className="footer-col">
+                <div className="label">Based in</div>
+                <span>{c.location}</span>
+              </div>
             </div>
-            <div className="footer-col">
-              <div className="label">Phone</div>
-              <a href={`tel:${c.phone.replace(/\s/g, "")}`}>{c.phone}</a>
-            </div>
-            <div className="footer-col">
-              <div className="label">GitHub</div>
-              <a href={c.githubUrl} target="_blank" rel="noreferrer">@{c.github} ↗</a>
-            </div>
-            <div className="footer-col">
-              <div className="label">LinkedIn</div>
-              <a href={c.linkedinUrl} target="_blank" rel="noreferrer">{c.linkedin} ↗</a>
-            </div>
-            <div className="footer-col">
-              <div className="label">Credly</div>
-              <a href={c.credlyUrl} target="_blank" rel="noreferrer">{c.credly} ↗</a>
-            </div>
-            <div className="footer-col">
-              <div className="label">Based in</div>
-              <span>{c.location}</span>
-            </div>
+
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="label" style={{ marginBottom: "20px" }}>
+                <span style={{ color: "var(--accent)", marginRight: 8 }}>→</span>Send a message
+              </div>
+              <div className="contact-row">
+                <div className="contact-field">
+                  <label className="contact-label">Name</label>
+                  <input
+                    className="contact-input"
+                    type="text"
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                  />
+                </div>
+                <div className="contact-field">
+                  <label className="contact-label">Email</label>
+                  <input
+                    className="contact-input"
+                    type="email"
+                    placeholder="your@email.com"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="contact-field">
+                <label className="contact-label">Subject</label>
+                <input
+                  className="contact-input"
+                  type="text"
+                  placeholder="What's this about?"
+                  value={form.subject}
+                  onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                  required
+                />
+              </div>
+              <div className="contact-field">
+                <label className="contact-label">Message</label>
+                <textarea
+                  className="contact-input contact-textarea"
+                  placeholder="Your message..."
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  required
+                />
+              </div>
+              <button className="contact-submit" type="submit" disabled={status === "sending"}>
+                {status === "sending" ? "Sending..." : status === "sent" ? "Message sent" : "Send message"}
+              </button>
+              {status === "error" && (
+                <p className="contact-error">Something went wrong — try emailing directly.</p>
+              )}
+            </form>
           </div>
         </Reveal>
 
