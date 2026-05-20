@@ -18,18 +18,23 @@ const ACCENT_OKLCH = {
 // ────────────────────────────────────────────────────────────────────────────
 // Top nav
 // ────────────────────────────────────────────────────────────────────────────
-function Nav() {
+function Nav({ dark, onToggle }) {
   return (
     <nav className="nav">
       <div className="nav-inner">
-
         <div className="nav-links">
           <a href="#ask">Ask</a>
           <a href="#work">Work</a>
           <a href="#experience">Experience</a>
           <a href="#stack">Stack</a>
         </div>
-        <a className="nav-cta" href="#contact">Get in touch →</a>
+        <div className="nav-actions">
+          <button className="nav-theme-toggle" onClick={onToggle} aria-label="Toggle theme">
+            <span className={`nav-theme-icon ${dark ? "is-dark" : "is-light"}`} />
+            <span className="nav-theme-label">{dark ? "Dark" : "Light"}</span>
+          </button>
+          <a className="nav-cta" href="#contact">Get in touch →</a>
+        </div>
       </div>
     </nav>
   );
@@ -57,7 +62,7 @@ function App() {
 
   return (
     <>
-      <Nav />
+      <Nav dark={t.dark} onToggle={() => setTweak("dark", !t.dark)} />
       <Hero />
       <Metrics />
       <LiveDemo />
